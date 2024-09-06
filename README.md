@@ -1,6 +1,5 @@
 ![image](estacio.png)
 
-**EQUIPE DEV TEAM 01**\
 **Nome:** Jamison Queiroz\
 **Matrícula:** 202208101127\
 **Curso:** Desenvolvimento Full Stack\
