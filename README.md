@@ -7,16 +7,16 @@
 **Professor:** Guilherme Dutra Gonzaga Jaime\
 **Disciplina:** Software Sem Segurança Nao Serve
 
-
 ## Missão Certificação Mundo 5
 
-Este projeto tem o objetivo de trabalhar com conceitos de design e arquitetura de software, análise e levantamento de requisitos, tratamento de exceções e erros, criação de webservice e integração entre aplicações/API’s distintas, realização de transação com Sistema Gerenciador de Banco de Dados (SGBD), trabalhar com versionamento e desenvolver solução jurídica para um cenário real de necessidade do judicial nacional.
+Este projeto tem o objetivo verificar a vulnerábilidade de um sistema de autenticação para gerenciar o acesso de usuários a uma API, utilizando JSON Web Tokens (JWT). O projeto aborda a criptografia de dados sensíveis, controle de sessão por meio de tokens, validação de perfis de usuário e implementação de segurança robusta, protegendo contra vulnerabilidades como token hijacking e SQL injection.
 
 ## Recursos
 
 - Linguagem de programação JavaScript; 
 - Banco de Dados Open Source PostgreSQL; 
-- Versionado através do Git / Github; 
+- Versionado através do Git / Github;
+- Postman
 
 ## Orientação
 
@@ -24,33 +24,44 @@ Este projeto tem o objetivo de trabalhar com conceitos de design e arquitetura d
 
 ## Executar e Testar
 
-Para iniciar o servidor, execute:
-bash
+Para iniciar o servidor, navegue até a pasta aonde descompactou o aquivo através do cmd e execute:
+
 Copiar código:
-´´´
+```
 node index.js
-´´´
+```
 - Agora, siga os passos no Postman para testar a API.
 
-3. Testando a API no Postman
-Passo 1: Criar Requisição de Login
-Abra o Postman e crie uma nova requisição POST para o endpoint http://localhost:3000/api/auth/login.
-No Body, escolha a opção raw e altere para JSON.
-Envie os seguintes dados no corpo da requisição:
-json
-Copiar código
+## Testando a API no Postman
+
+- Abra o Postman e crie uma nova requisição POST para o endpoint http://localhost:3000/api/auth/login.
+- No Body, escolha a opção raw e altere para JSON.
+- Envie os seguintes dados no corpo da requisição:
+```
 {
     "username": "admin",
     "password": "123456"
 }
-Isso retornará um token JWT, que será usado nas próximas requisições.
-Passo 2: Testar Requisição Protegida (Recuperar Usuário Logado)
-Crie uma nova requisição GET para o endpoint http://localhost:3000/api/me.
-Na aba Authorization, selecione o tipo Bearer Token e insira o token JWT gerado no login anterior.
-Envie a requisição. Se o token for válido, você verá os dados do usuário logado.
-Passo 3: Testar o Controle de Acesso (Recuperar Contratos)
-Crie uma nova requisição GET para o endpoint http://localhost:3000/api/contracts/{empresa}/{inicio}. Exemplo: http://localhost:3000/api/contracts/myCompany/2024-01-01.
-Na aba Authorization, selecione novamente o tipo Bearer Token e insira o token JWT do login de um usuário com perfil de admin.
-Se tudo estiver correto, você deverá receber os contratos cadastrados no banco de dados para a empresa e data fornecidos.
+```
+- Isso retornará um token JWT, que será usado nas próximas requisições.
+
+  ![image](gerando_tolken.png)
+
+## Testar Requisição Protegida (Recuperar Usuário Logado)
+
+- Crie uma nova requisição GET para o endpoint http://localhost:3000/api/me.
+- Na aba Authorization, selecione o tipo Bearer Token e insira o token JWT gerado no login anterior.
+- Envie a requisição. Se o token for válido, você verá os dados do usuário logado.
+
+![image](requisicao_protegida.png)
+
+## Testar o Controle de Acesso (Recuperar Contratos)
+
+- Crie uma nova requisição GET para o endpoint http://localhost:3000/api/contracts/{empresa}/{inicio}.
+- Exemplo Usado: http://localhost:3000/api/contracts/Ragatanga/2024-05-12.
+- Na aba Authorization, selecione novamente o tipo Bearer Token e insira o token JWT do login de um usuário com perfil de admin.
+- Se tudo estiver correto, você deverá receber os contratos cadastrados no banco de dados para a empresa e data fornecidos.
+
+![image](recuperando_contrato.png)
 
 
