@@ -25,8 +25,6 @@ Este projeto tem o objetivo verificar a vulnerábilidade de um sistema de autent
 ## Executar e Testar
 
 Para iniciar o servidor, navegue até a pasta aonde descompactou o aquivo através do cmd e execute:
-
-Copiar código:
 ```
 node index.js
 ```
