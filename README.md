@@ -1,12 +1,3 @@
-![image](estacio.png)
-
-**Nome:** Jamison Queiroz\
-**Matrícula:** 202208101127\
-**Curso:** Desenvolvimento Full Stack\
-**Turma:** 2022.4\
-**Professor:** Guilherme Dutra Gonzaga Jaime\
-**Disciplina:** Software Sem Segurança Nao Serve
-
 ## Introdução
 
 Este projeto tem o objetivo verificar a vulnerábilidade de um sistema de autenticação para gerenciar o acesso de usuários a uma API, utilizando JSON Web Tokens (JWT). O projeto aborda a criptografia de dados sensíveis, controle de sessão por meio de tokens, validação de perfis de usuário e implementação de segurança robusta, protegendo contra vulnerabilidades como token hijacking e SQL injection.
